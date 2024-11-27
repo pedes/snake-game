@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        canvas {
-            border: 1px solid black;
-        }
-    </style>
-</head>
-<body>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <script src="snake.js"></script>
-</body>
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Enhanced Snake Game</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f0f0f0;
+                font-family: Arial, sans-serif;
+            }
+            canvas {
+                border: 2px solid black;
+            }
+            #controls {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="gameCanvas" width="400" height="400" aria-label="Snake game"></canvas>
+        <div id="controls">
+            <button onclick="direction = { x: 0, y: -1 }">Up</button>
+            <button onclick="direction = { x: -1, y: 0 }">Left</button>
+            <button onclick="direction = { x: 1, y: 0 }">Right</button>
+            <button onclick="direction = { x: 0, y: 1 }">Down</button>
+            <button onclick="isPaused = !isPaused">Pause</button>
+        </div>
+        <script src="snake.js"></script>
+    </body>
+    </html>
+
+
